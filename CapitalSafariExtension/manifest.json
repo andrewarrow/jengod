@@ -2,13 +2,19 @@
   "manifest_version": 3,
   "name": "Capital Safari",
   "version": "1.0.0",
-  "description": "Convert every visible letter on a webpage to uppercase.",
+  "description": "Change the exact text Jengod to jengod on wikipedia.com.",
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "*://wikipedia.com/*",
+        "*://*.wikipedia.com/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
   ],
-  "permissions": ["<all_urls>"]
+  "permissions": [
+    "*://wikipedia.com/*",
+    "*://*.wikipedia.com/*"
+  ]
 }

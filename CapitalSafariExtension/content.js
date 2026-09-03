@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  const host = window.location.hostname.toLowerCase();
+  const isWikipedia = host === "wikipedia.com" || host.endsWith(".wikipedia.com");
+  if (!isWikipedia) return;
+
   // Elements whose text is code, metadata, or editable user input should not
   // be rewritten. Everything else under <body> is eligible.
   const ignoredElements = new Set([
@@ -18,7 +22,7 @@
     return parent && (ignoredElements.has(parent.tagName) || parent.isContentEditable);
   }
 
-  function capitalize(root) {
+  function replaceJengod(root) {
     if (!root) return;
 
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -28,23 +32,23 @@
 
     textNodes.forEach((textNode) => {
       if (isIgnored(textNode)) return;
-      const uppercase = textNode.nodeValue.toUpperCase();
-      if (uppercase !== textNode.nodeValue) textNode.nodeValue = uppercase;
+      const replaced = textNode.nodeValue.replace(/Jengod/g, "jengod");
+      if (replaced !== textNode.nodeValue) textNode.nodeValue = replaced;
     });
   }
 
-  capitalize(document.body);
+  replaceJengod(document.body);
 
-  // Keep pages that render new content uppercase too, without polling.
+  // Keep pages that render new content lowercase too, without polling.
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((addedNode) => {
         if (addedNode.nodeType === Node.TEXT_NODE) {
           if (!isIgnored(addedNode)) {
-            addedNode.nodeValue = addedNode.nodeValue.toUpperCase();
+            addedNode.nodeValue = addedNode.nodeValue.replace(/Jengod/g, "jengod");
           }
         } else if (addedNode.nodeType === Node.ELEMENT_NODE) {
-          capitalize(addedNode);
+          replaceJengod(addedNode);
         }
       });
     });

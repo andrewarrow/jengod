@@ -12,7 +12,7 @@ struct ContentView: View {
                     Text("Capital Safari")
                         .font(.largeTitle.weight(.bold))
 
-                    Text("Make every page uppercase in Mobile Safari.")
+                    Text("Make “Jengod” lowercase on wikipedia.com.")
                         .font(.title3)
                         .foregroundStyle(.secondary)
                 }
@@ -20,12 +20,12 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 14) {
                     Label("Open Settings", systemImage: "gear")
                         .font(.headline)
-                    Text("Go to Safari → Extensions → Capital Safari and allow it on the websites where you want it to run.")
+                    Text("Go to Safari → Extensions → Capital Safari and allow it on wikipedia.com.")
                         .foregroundStyle(.secondary)
 
                     Label("Turn it on", systemImage: "power")
                         .font(.headline)
-                    Text("Return to Safari and reload a page. The extension converts its visible text to capital letters automatically.")
+                    Text("Return to Safari and reload a wikipedia.com page. The exact text “Jengod” will become “jengod”, including newly loaded content.")
                         .foregroundStyle(.secondary)
                 }
                 .padding(20)
