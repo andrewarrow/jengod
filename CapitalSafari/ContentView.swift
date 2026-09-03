@@ -12,7 +12,7 @@ struct ContentView: View {
                     Text("Capital Safari")
                         .font(.largeTitle.weight(.bold))
 
-                    Text("Make “Jengod” lowercase on wikipedia.com.")
+                    Text("Make “Jengod” lowercase on wikipedia.org.")
                         .font(.title3)
                         .foregroundStyle(.secondary)
                 }
@@ -20,12 +20,12 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 14) {
                     Label("Open Settings", systemImage: "gear")
                         .font(.headline)
-                    Text("Go to Safari → Extensions → Capital Safari and allow it on wikipedia.com.")
+                    Text("Go to Safari → Extensions → Capital Safari and allow it on wikipedia.org.")
                         .foregroundStyle(.secondary)
 
                     Label("Turn it on", systemImage: "power")
                         .font(.headline)
-                    Text("Return to Safari and reload a wikipedia.com page. The exact text “Jengod” will become “jengod”, including newly loaded content.")
+                    Text("Return to Safari and reload a wikipedia.org page. The exact text “Jengod” will become “jengod”, including newly loaded content.")
                         .foregroundStyle(.secondary)
                 }
                 .padding(20)

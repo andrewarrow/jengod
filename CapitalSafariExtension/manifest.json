@@ -2,19 +2,19 @@
   "manifest_version": 3,
   "name": "Capital Safari",
   "version": "1.0.0",
-  "description": "Change the exact text Jengod to jengod on wikipedia.com.",
+  "description": "Change the exact text Jengod to jengod on wikipedia.org.",
   "content_scripts": [
     {
       "matches": [
-        "*://wikipedia.com/*",
-        "*://*.wikipedia.com/*"
+        "*://wikipedia.org/*",
+        "*://*.wikipedia.org/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
   ],
   "permissions": [
-    "*://wikipedia.com/*",
-    "*://*.wikipedia.com/*"
+    "*://wikipedia.org/*",
+    "*://*.wikipedia.org/*"
   ]
 }

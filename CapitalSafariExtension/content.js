@@ -2,7 +2,7 @@
   "use strict";
 
   const host = window.location.hostname.toLowerCase();
-  const isWikipedia = host === "wikipedia.com" || host.endsWith(".wikipedia.com");
+  const isWikipedia = host === "wikipedia.org" || host.endsWith(".wikipedia.org");
   if (!isWikipedia) return;
 
   // Elements whose text is code, metadata, or editable user input should not
